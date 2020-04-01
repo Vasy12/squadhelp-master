@@ -2,12 +2,12 @@ import React from 'react';
 import classNames from 'classnames';
 
 const FormInput = (props) => {
-  const { label, input, type, classes, meta: { touched, error } } = props;
+  const { label, input, type, classes, meta: { touched, error, visited } } = props;
 
   const inputClassName = classNames(classes.input,
                                     {
                                       [classes.notValid]: touched && error,
-                                      [classes.valid]: touched && !error,
+                                      [classes.valid]: visited && !error,
                                     });
 
   return (
